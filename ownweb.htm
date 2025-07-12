@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-box, .preview-box {
+      background: white;
+      padding: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      text-align: center;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    img {
+      width: 150px;
+      height: 150px;
+      margin-top: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box" id="loginBox">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button onclick="login()">Login</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <div class="preview-box" id="previewBox" style="display:none;">
+    <h2>Welcome, Ranveer!</h2>
+   <a href="https://imgbb.com/"><img src="https://i.ibb.co/93hq1x7t/channels4-profile.jpg" alt="channels4-profile" border="0"></a>
+    <p>Email: <strong>1234.ranveergamer@gmail.com</strong></p>
+    <p>Status: <span style="color:green;">✅ Logged in successfully</span></p>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const message = document.ge
+tElementById('message');
+
+      const validEmail = "1234.ranveergamer@gmail.com";
+      const validPassword = "ranveer420op";
+
+      if (email === validEmail && password === validPassword) {
+        // Hide login box and show preview box
+        document.getElementById('loginBox').style.display = 'none';
+        document.getElementById('previewBox').style.display = 'block';
+      } else {
+        message.style.color = "red";
+        message.textContent = "Invalid email or password.";
+      }
+    }
+  </script>
+
+</body>
+</html>
